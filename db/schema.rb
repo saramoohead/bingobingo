@@ -10,10 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171007160816) do
+ActiveRecord::Schema.define(version: 20171007170158) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "organisations", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string   "name",       null: false
+    t.string   "code",       null: false
+    t.string   "type",       null: false
+    t.index ["code"], name: "index_organisations_on_code", unique: true, using: :btree
+  end
 
   create_table "users", force: :cascade do |t|
     t.datetime "created_at",                     null: false
@@ -22,8 +31,11 @@ ActiveRecord::Schema.define(version: 20171007160816) do
     t.string   "encrypted_password", limit: 128, null: false
     t.string   "confirmation_token", limit: 128
     t.string   "remember_token",     limit: 128, null: false
-    t.index ["email"], name: "index_users_on_email", using: :btree
+    t.integer  "organisation_id"
+    t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
+    t.index ["organisation_id"], name: "index_users_on_organisation_id", using: :btree
     t.index ["remember_token"], name: "index_users_on_remember_token", using: :btree
   end
 
+  add_foreign_key "users", "organisations"
 end
