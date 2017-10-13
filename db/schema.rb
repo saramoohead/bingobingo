@@ -16,21 +16,23 @@ ActiveRecord::Schema.define(version: 20171007170158) do
   enable_extension "plpgsql"
 
   create_table "organisations", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.string   "name",       null: false
-    t.string   "code",       null: false
-    t.string   "type",       null: false
+    t.datetime "created_at",                    null: false
+    t.datetime "updated_at",                    null: false
+    t.string   "name",                          null: false
+    t.string   "code",                          null: false
+    t.integer  "organisation_type", default: 0, null: false
+    t.integer  "status",            default: 0
     t.index ["code"], name: "index_organisations_on_code", unique: true, using: :btree
   end
 
   create_table "users", force: :cascade do |t|
-    t.datetime "created_at",                     null: false
-    t.datetime "updated_at",                     null: false
-    t.string   "email",                          null: false
-    t.string   "encrypted_password", limit: 128, null: false
+    t.datetime "created_at",                                 null: false
+    t.datetime "updated_at",                                 null: false
+    t.string   "email",                                      null: false
+    t.integer  "status",                         default: 0
+    t.string   "encrypted_password", limit: 128,             null: false
     t.string   "confirmation_token", limit: 128
-    t.string   "remember_token",     limit: 128, null: false
+    t.string   "remember_token",     limit: 128,             null: false
     t.integer  "organisation_id"
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
     t.index ["organisation_id"], name: "index_users_on_organisation_id", using: :btree

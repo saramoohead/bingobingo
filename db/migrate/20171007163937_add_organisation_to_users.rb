@@ -4,7 +4,8 @@ class AddOrganisationToUsers < ActiveRecord::Migration[5.0]
       t.timestamps null: false
       t.string :name, null: false
       t.string :code, null: false
-      t.string :type, null: false
+      t.integer :organisation_type, null: false, default: 0
+      t.integer :status, default: 0
     end
 
     add_index :organisations, :code, unique: true

@@ -3,9 +3,9 @@
   <%= form.email_field :email %>
 </div>
 
-<div class="text-field">
+<div class="dropdown">
   <%= form.label :organisation %>
-  <%= form.text_field :organisation %>
+  <%= form.collection_select(:organisation_id, Organisation.all, :id, :code) %>
 </div>
 
 <div class="password-field">
