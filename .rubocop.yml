@@ -4,6 +4,8 @@ AllCops:
   Exclude:
     - 'db/**/*'
     - 'node_modules/**/*'
+    - 'config/**/*'
+    - 'script/**/*'
 
 Rails:
   Enabled: true

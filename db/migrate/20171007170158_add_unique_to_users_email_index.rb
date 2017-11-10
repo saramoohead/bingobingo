@@ -1,3 +1,5 @@
+# Migration to add unique email validation at the database level
+
 class AddUniqueToUsersEmailIndex < ActiveRecord::Migration[5.0]
   def change
     remove_index :users, :email

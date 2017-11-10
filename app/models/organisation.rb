@@ -1,3 +1,5 @@
+# An organisation is the top level, a parent to many children users
+
 class Organisation < ApplicationRecord
   has_many :users
 
