@@ -1,0 +1,11 @@
+/*******************************
+         Site Overrides
+*******************************/
+
+.masthead.segment {
+    min-height: 350px;
+}
+
+.text.container {
+  margin-top: 60px;
+}

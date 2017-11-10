@@ -1,0 +1,7 @@
+/*******************************
+         Site Overrides
+*******************************/
+
+.masthead {
+  background-color: @primaryColor !important;
+}

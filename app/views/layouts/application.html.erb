@@ -3,25 +3,39 @@
   <head>
     <title>Bingobingo</title>
     <%= csrf_meta_tags %>
-
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track": "reload" %>
+    <%= javascript_include_tag "application", "data-turbolinks-track": "reload" %>
   </head>
 
-  <body>
-    <% if signed_in? %>
-      Signed in as: <%= current_user.email %>
-      <%= link_to 'Sign out', sign_out_path, method: :delete %>
-    <% else %>
-      <%= link_to 'Sign in', sign_in_path %>
-    <% end %>
-
+  <body class="pushable">
     <div id="flash">
       <% flash.each do |key, value| %>
         <div class="flash <%= key %>"><%= value %></div>
       <% end %>
     </div>
 
+    <div class="ui container">
+      <div class="ui large inverted secondary menu">
+        <a class="item">Home</a>
+        <a class="item">Pictures</a>
+        <a class="item">Boards</a>
+        <a class="item">Games</a>
+        <div class="right item">
+          <% if signed_in? %>
+            Signed in as: <%= current_user.email %>
+            <div class="ui button">
+              <%= link_to 'Sign out', sign_out_path, method: :delete %>
+            </div>
+          <% else %>
+            <div class="ui button">
+              <%= link_to 'Sign in', sign_in_path %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+
     <%= yield %>
+
   </body>
 </html>

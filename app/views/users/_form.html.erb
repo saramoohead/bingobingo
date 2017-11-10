@@ -4,8 +4,9 @@
 </div>
 
 <div class="dropdown">
-  <%= form.label :organisation %>
+  <%= form.label "Join an organisation" %>
   <%= form.collection_select(:organisation_id, Organisation.all, :id, :code) %>
+  <%= link_to("or create a new one", "", class: "add_organisation") %>
 </div>
 
 <div class="password-field">
