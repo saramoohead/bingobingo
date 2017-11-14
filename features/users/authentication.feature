@@ -1,10 +1,10 @@
 Feature: User authentication
 
   Scenario: User signs up to existing organisation
-    Given I am on the sign up page
-    And the following organisation exists:
+    Given the following organisation exists:
       | name     | code    |
       | St Johns | STJOHNS |
+    And I am on the sign up page
     When I sign up with the following credentials:
       | email                 | organisation | password |
       | sara@familybingo.club | STJOHNS      | boo800   |

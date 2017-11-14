@@ -1,8 +1,8 @@
 Feature: Organisations
 
   Scenario: Selecting an organisation
-    Given I am on the sign up page
-    And the following organisation exists:
+    Given the following organisation exists:
       | name     | code    |
       | St Johns | STJOHNS |
+    And I am on the sign up page
     Then the dropdown menu should contain "STJOHNS"

@@ -6,6 +6,6 @@ Given(/^the following organisation exists:$/) do |table|
 end
 
 Then(/^the dropdown menu should contain "([^"]*)"$/) do |code|
-  visit "/sign_up"
-  expect(page).to have_select("user_organisation_id", selected: code)
+  expect(page).to have_select("user_organisation_id",
+                              with_options: [code])
 end

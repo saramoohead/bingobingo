@@ -3,8 +3,6 @@ Given(/^I am on the sign up page$/) do
 end
 
 When(/^I sign up with the following credentials:$/) do |table|
-  visit "/sign_up"
-
   table.hashes.each do |row|
     fill_in "Email", with: row["email"]
     select row["organisation"], from: "user_organisation_id"
