@@ -31,6 +31,12 @@ end
 
 When(/^I sign in with the following credentials:$/) do |table|
   table.hashes.each do |row|
-    login_with(row)
+    login_with(row["email"], row["password"])
   end
+end
+
+Given(/^I am logged in as a member of "([^"]*)"$/) do |organisation_code|
+  organisation = create(:organisation, code: organisation_code)
+  user = create(:user, organisation: organisation)
+  login_with(user.email, user.password)
 end
