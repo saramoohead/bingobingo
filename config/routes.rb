@@ -1,7 +1,13 @@
 Rails.application.routes.draw do
+  # TODO: this needs testing and using properly
+  constraints Clearance::Constraints::SignedIn.new do
+    root to: "home#show"
+  end
+
   root to: "home#show"
   resources :passwords, controller: "clearance/passwords", only: [:create, :new]
-  resource :session, controller: "clearance/sessions", only: [:create]
+  resource  :session, controller: "clearance/sessions", only: [:create]
+  resources :pictures
 
   resources :users, only: [:create] do
     resource :password,

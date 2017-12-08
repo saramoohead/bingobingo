@@ -37,6 +37,8 @@ gem "autoprefixer-rails"
 gem "less-rails-semantic_ui"
 gem "therubyracer"
 
+gem "carrierwave", "~> 1.0"
+
 # Use Capistrano for deployment
 # gem "capistrano-rails", group: :development
 

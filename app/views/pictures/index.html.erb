@@ -1,0 +1,23 @@
+<div class="pusher">
+  <div class="ui vertical stripe segment">
+    <div class="ui middle aligned stackable grid container">
+      <div class="row">
+        <div class="center aligned column">
+          <h3 class="ui header">Upload your picture</h3>
+        </div>
+      </div>
+      <div class="row">
+        <div class="eight wide column">
+          <h3 class="ui header">Picture tips</h3>
+          <p>The best pictures are clear, colourful and can fit into a square shape. Try to make it something even the youngest can recognise.</p>
+          <h3 class="ui header">Your pictures</h3>
+          <% @pictures.each do |picture| %>
+            <%= image_tag picture.square_image %>
+            <%= "#{picture.short_description} by #{picture.name}"%>
+          <% end %>
+        </div>
+        <%= render "form" %>
+      </div>
+    </div>
+  </div>
+</div>

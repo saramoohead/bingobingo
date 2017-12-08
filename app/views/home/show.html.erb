@@ -1,6 +1,6 @@
 <div class="pusher">
   <div class="ui vertical masthead inverted center aligned segment height-tall">
-    <div class="ui text container">
+    <div class="ui text container container--masthead">
       <h1 class="ui inverted header">Family Bingo Club</h1>
       <h2>Make and play Bingo</br> with your own pictures</h2>
       <div class="ui huge secondary button">
@@ -13,7 +13,7 @@
     <div class="ui equal width stackable internally celled grid">
       <div class="center aligned row">
         <div class="column">
-          <h3>Upload your pictures</h3>
+          <h3><%=link_to "Upload your pictures", pictures_path %></h3>
           <p>Each group can store up to 75 custom images, or use ours.</p>
         </div>
         <div class="column">
@@ -23,21 +23,6 @@
         <div class="column">
           <h3>Play bingo</h3>
           <p>Play with traditional numbers or just pictures.</br> Check winners automatically.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="ui vertical stripe segment">
-    <div class="ui middle aligned stackable grid container">
-      <div class="center aligned row">
-        <div class="eight wide column">
-          <h3>Upload a picture</h3>
-          <p>Images that fit into a square, with bold, bright colours illustrating easily-recognisable objects work best.</p>
-        </div>
-        <div class="six wide column">
-          <img src="assets/white-image.png" class="ui large bordered rounded image">
-          <a class="ui huge button">Choose image</a>
         </div>
       </div>
     </div>

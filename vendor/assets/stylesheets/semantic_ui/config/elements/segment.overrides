@@ -3,9 +3,9 @@
 *******************************/
 
 .masthead.segment {
-    min-height: 350px;
+    min-height: 500px;
 }
 
-.text.container {
-  margin-top: 60px;
+.text.container--masthead {
+  margin-top: 120px;
 }
