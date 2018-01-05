@@ -1,8 +1,8 @@
 FactoryBot.define do
   factory :picture do
-    name "MyText"
-    short_description "MyText"
-    user nil
-    square_image "MyString"
+    user
+    name "EOC"
+    short_description "Snake"
+    square_image "red_snake_EOC.jpg"
   end
 end

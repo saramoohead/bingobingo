@@ -2,24 +2,31 @@ Given(/^I am on the Pictures page$/) do
   visit pictures_path
 end
 
-Given("I (choose|have chosen) the image {filename} for uploading") do |filename|
+Then(/^I should see the image "([^"]*)" in the preview$/) do |filename|
+  expect(page).to have_xpath("//img[contains(@src,\"#{filename}\")]")
+end
+
+Given(/^I (?:choose|have chosen) the image "([^"]*)" for uploading$/) do |filename|
   attach_file("picture_square_image", Rails.root.join("fixtures", "files", filename))
 end
 
-When("I fill in the image description form with the following information:") do |table|
-  # table is a Cucumber::MultilineArgument::DataTable
-  pending # Write code here that turns the phrase above into concrete actions
+When(/^I fill in the image description form with the following information:$/) do |table|
+  fill_form(table)
 end
 
-When("I choose to upload") do
-  pending # Write code here that turns the phrase above into concrete actions
+When(/^I have uploaded the following image:$/) do |table|
+  user = User.last
+  table.hashes.each do |row|
+    create(:picture,
+           user:              user,
+           name:              row["name"],
+           short_description: row["short_description"],
+           square_image:      row["file_name"])
+  end
 end
 
-Then("I should see the following images:") do |table|
-  # table is a Cucumber::MultilineArgument::DataTable
-  pending # Write code here that turns the phrase above into concrete actions
-end
-
-Then(/^I should see the image "([^"]*)" in the preview$/) do |filename|
-  expect(page).to have_xpath("//img[contains(@src,\"#{filename}\")]")
+Then(/^I should see the following image details:$/) do |table|
+  table.raw.each do |_attribute, value|
+    expect(page).to have_content(value)
+  end
 end

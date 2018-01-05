@@ -40,3 +40,9 @@ Given(/^I am logged in as a member of "([^"]*)"$/) do |organisation_code|
   user = create(:user, organisation: organisation)
   login_with(user.email, user.password)
 end
+
+Given(/^I am logged in as "([^"]*)" of "([^"]*)"$/) do |user_email, organisation_code|
+  organisation = create(:organisation, code: organisation_code)
+  user = create(:user, email: user_email, organisation: organisation)
+  login_with(user.email, user.password)
+end
