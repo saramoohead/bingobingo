@@ -1,12 +1,15 @@
+<%= render 'shared/errors', object: @picture %>
+
 <div class="six wide right floated column ui form">
   <%= form_for @picture, html: { multipart: true } do |form| %>
     <%= form.label :picture %><br>
-    <%= image_tag "white-image.png", class: "ui large bordered rounded image" %>
+    <%= image_tag "white-image.png", class: "ui large bordered rounded image", id: "pre-upload-picture" %>
     <%= form.file_field :square_image %>
     <%= form.label :name_of_artist %>
     <%= form.text_field :name %>
     <%= form.label :short_description %>
     <%= form.text_field :short_description %>
+    <%= form.hidden_field :square_image_cache %>
     <%= form.submit "Upload picture", class: "ui huge button" %>
   <% end %>
 </div>

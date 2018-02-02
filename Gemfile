@@ -37,7 +37,15 @@ gem "autoprefixer-rails"
 gem "less-rails-semantic_ui"
 gem "therubyracer"
 
+# Images
+# Uploading images
 gem "carrierwave", "~> 1.0"
+# Validating images
+gem "file_validators"
+# Resizing images
+gem "mini_magick"
+# Avoid loading error for console since including mini magick
+gem "rb-readline"
 
 # Use Capistrano for deployment
 # gem "capistrano-rails", group: :development

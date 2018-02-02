@@ -2,4 +2,8 @@
 class Picture < ApplicationRecord
   belongs_to :user
   mount_uploader :square_image, SquareImageUploader
+
+  validates :name, presence: true
+  validates :short_description, presence: true
+  validates :square_image, file_size: { less_than: 1.megabytes }
 end

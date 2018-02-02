@@ -6,7 +6,8 @@ class PicturesController < ApplicationController
   end
 
   def create
-    current_user.pictures.create(picture_params)
+    @pictures = Picture.where(user: current_user)
+    @picture = current_user.pictures.create(picture_params)
     render :index
   end
 

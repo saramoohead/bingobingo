@@ -1,0 +1,5 @@
+<h3 class="ui header">Your pictures</h3>
+<% @pictures.each do |picture| %>
+  <%= image_tag picture.square_image.thumb %>
+  <%= "#{picture.short_description} by #{picture.name}"%>
+<% end %>
