@@ -1,14 +1,12 @@
 <div class="pusher">
   <div class="ui vertical stripe segment">
+    <%= render "header" %>
     <div class="ui middle aligned stackable grid container">
-      <div class="row">
-        <div class="eight wide column">
-          <%= render "header" %>
-          <%= render "instructions" %>
-          <%= render "gallery" %>
-        </div>
-        <%= render "form" %>
+      <div class="eight wide column">
+        <%= render "instructions" %>
+        <%= render "gallery" %>
       </div>
+      <%= render "form" %>
     </div>
   </div>
 </div>

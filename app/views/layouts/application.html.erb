@@ -15,24 +15,7 @@
     </div>
 
     <div class="ui container">
-      <div class="ui large inverted secondary menu">
-        <%= link_to "Home", root_path, class: "item" %>
-        <%= link_to "Pictures", pictures_path, class: "item" %>
-        <a class="item">Boards</a>
-        <a class="item">Games </a>
-        <div class="right item">
-          <% if signed_in? %>
-            Signed in as: <%= current_user.email %>
-            <div class="ui button">
-              <%= link_to 'Sign out', sign_out_path, method: :delete %>
-            </div>
-          <% else %>
-            <div class="ui button">
-              <%= link_to 'Sign in', sign_in_path %>
-            </div>
-          <% end %>
-        </div>
-      </div>
+        <%= render partial: '/home/menu' %>
     </div>
 
     <%= yield %>

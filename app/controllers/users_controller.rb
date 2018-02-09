@@ -1,3 +1,4 @@
+# Handles incoming user authentication
 class UsersController < Clearance::UsersController
   private
 
