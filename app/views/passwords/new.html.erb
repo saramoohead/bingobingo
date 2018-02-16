@@ -1,16 +1,27 @@
-<div id="clearance" class="password-reset">
-  <h2><%= t(".title") %></h2>
+<div class="pusher">
+  <div class="ui container">
+    <div class="ui vertical stripe segment">
+      <div class="ui equal width stackable internally celled grid">
+        <div class="column">
 
-  <p><%= t(".description") %></p>
+          <div id="clearance" class="password-reset">
+            <h2><%= t(".title") %></h2>
 
-  <%= form_for :password, url: passwords_path do |form| %>
-    <div class="text-field">
-      <%= form.label :email %>
-      <%= form.text_field :email, type: 'email' %>
+            <p><%= t(".description") %></p>
+
+            <%= form_for :password, url: passwords_path do |form| %>
+              <div class="text-field">
+                <%= form.label :email %>
+                <%= form.text_field :email, type: 'email' %>
+              </div>
+
+              <div class="submit-field">
+                <%= form.submit %>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
     </div>
-
-    <div class="submit-field">
-      <%= form.submit %>
-    </div>
-  <% end %>
+  </div>
 </div>
