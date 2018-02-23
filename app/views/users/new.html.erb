@@ -1,14 +1,16 @@
+
 <div class="pusher">
   <div class="ui container">
     <div class="ui vertical stripe segment">
       <div class="ui equal width stackable internally celled grid">
         <div class="column">
-          
+
           <div id="clearance" class="sign-up">
-            <h2><%= t(".title") %></h2>
+            <h2><%= "Join the #{@organisation.name} bingo club" %></h2>
 
             <%= form_for @user do |form| %>
-              <%= render partial: '/users/form', object: form %>
+              <%= render partial: '/users/form', object: form, locals: { id: params[:id] } %>
+              <%= hidden_field_tag(:organisation_id, params[:organisation_id])%>
 
               <div class="submit-field">
                 <%= form.submit "Sign up", class: "ui button" %>
@@ -19,6 +21,9 @@
               </div>
             <% end %>
           </div>
+        </div>
+
+        <div class="column">
 
         </div>
       </div>

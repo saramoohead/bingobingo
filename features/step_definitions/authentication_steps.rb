@@ -3,16 +3,13 @@ Given(/^I am on the sign up page$/) do
 end
 
 When(/^I sign up with the following credentials:$/) do |table|
-  table.hashes.each do |row|
-    fill_in "Email", with: row["email"]
-    select row["organisation"], from: "user_organisation_id"
-    fill_in "Password", with: row["password"]
-    click_on "Sign up"
+  within(".new_user") do
+    table.hashes.each do |row|
+      fill_in "Email", with: row["email"]
+      fill_in "Password", with: row["password"]
+      click_on "Sign up"
+    end
   end
-end
-
-Then(/^I should see "([^"]*)"$/) do |text|
-  expect(page).to have_content(text)
 end
 
 Given(/^the following user exists:$/) do |table|

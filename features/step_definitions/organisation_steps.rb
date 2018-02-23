@@ -1,11 +1,9 @@
 Given(/^the following organisation exists:$/) do |table|
   table.hashes.each do |row|
-    create(:organisation, row.merge(name: row["name"],
-                                    code: row["code"]))
+    create(:organisation, row)
   end
 end
 
-Then(/^the dropdown menu should contain "([^"]*)"$/) do |code|
-  expect(page).to have_select("user_organisation_id",
-                              with_options: [code])
+When(/^I visit invitation link "([^"]*)"$/) do |join_organisation_link|
+  visit join_organisation_link
 end

@@ -2,18 +2,7 @@
   <%= form.email_field :email, placeholder: "Email" %>
   <i class="mail outline icon"></i>
 </div>
-<div>
-  <br />
-    <%= form.collection_select(:organisation_id, Organisation.all, :id, :code, { prompt: "Join an organisation" }, { class: "ui js-dropdown search dropdown" }) %>
-    <!-- <%= link_to("or create a new one", "", class: "add_organisation") %> -->
 
-<!-- on change, read value, if value is "not here new" hide dropdown and replace with new fields -->
-<!-- start with, when click, give alert
-then when change, give alert
-jquery events -->
-<!-- https://stackoverflow.com/questions/39445556/rails-dropdown-with-others-option-to-be-stored-in-same-field -->
-
-</div>
 <div class="password-field ui large input left icon">
   <%= form.password_field :password, placeholder: "Password" %>
   <i class="privacy icon"></i>
