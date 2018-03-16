@@ -19,6 +19,7 @@
 --------------------*/
 
 @pageBackground      : #F7F7F7;
+@white               : #FFFFFF;
 @pageOverflowX       : hidden;
 
 @lineHeight          : 1.33;

@@ -20,7 +20,11 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  sign_up:
+    create_organisation: Create your organisation
+    only_sign_up_to_create_organisation: Only sign up if you are the bingo game organiser.
+    uploading_picture_does_not_require_sign_up: To upload pictures, the bingo organiser sends out a special invitation code.
+    
   errors:
       messages:
         carrierwave_processing_error: "Cannot resize image."

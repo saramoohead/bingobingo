@@ -1,9 +1,22 @@
-<div class="text-field ui large input left icon">
-  <%= form.email_field :email, placeholder: "Email" %>
-  <i class="mail outline icon"></i>
-</div>
+<%= form_for @user, url: {action: "create"} do |form| %>
+  <div class="text-field ui large input left icon">
+    <%= form.email_field :email, placeholder: "Email" %>
+    <i class="mail outline icon"></i>
+  </div>
+  </br>
+  <div class="text-field ui large input left icon">
+    <%= form.fields_for :organisation do |organisation_form| %>
+      <%= organisation_form.text_field :name, placeholder: "Organisation name" %>
+      <i class="home icon"></i>
+    <% end %>
+  </div>
+  </br>
+  <div class="password-field ui large input left icon">
+    <%= form.password_field :password, placeholder: "Password" %>
+    <i class="privacy icon"></i>
+  </div>
 
-<div class="password-field ui large input left icon">
-  <%= form.password_field :password, placeholder: "Password" %>
-  <i class="privacy icon"></i>
-</div>
+  <div class="submit-field">
+    <%= form.submit "Sign up", class: "ui button" %>
+  </div>
+<% end %>

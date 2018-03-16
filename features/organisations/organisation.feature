@@ -1,9 +1,10 @@
 Feature: Organisations
-  Background:
-
-
   Scenario: Creating an organisation
-
+    Given I am on the sign up page
+    When I sign up with the following credentials:
+      | email                 | name                     | password |
+      | sara@familybingo.club | St John's Primary School | sarasara |
+    Then I should see "Signed in as: sara@familybingo.club"
 
   Scenario: Viewing an organisation invitation link
     Given the following organisation exists:

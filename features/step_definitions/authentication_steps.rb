@@ -6,6 +6,7 @@ When(/^I sign up with the following credentials:$/) do |table|
   within(".new_user") do
     table.hashes.each do |row|
       fill_in "Email", with: row["email"]
+      fill_in "Organisation name", with: row["name"]
       fill_in "Password", with: row["password"]
       click_on "Sign up"
     end

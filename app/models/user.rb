@@ -2,7 +2,7 @@
 class User < ApplicationRecord
   include Clearance::User
   belongs_to :organisation
-  has_many :pictures
+  accepts_nested_attributes_for :organisation
 
   validates :email, presence: true, uniqueness: true
 
