@@ -15,11 +15,7 @@ end
 
 Given(/^the following user exists:$/) do |table|
   table.hashes.each do |row|
-    create(:organisation,
-           code: row["organisation"])
-
-    organisation = Organisation.find_by(code: row["organisation"])
-
+    organisation = create(:organisation, name: row["organisation"])
     create(:user,
            email:        row["email"],
            organisation: organisation,
@@ -33,14 +29,12 @@ When(/^I sign in with the following credentials:$/) do |table|
   end
 end
 
-Given(/^I am logged in as a member of "([^"]*)"$/) do |organisation_code|
-  organisation = create(:organisation, code: organisation_code)
-  user = create(:user, organisation: organisation)
+Given(/^I am logged in as "([^"]*)" of "([^"]*)":$/) do |user_email, organisation_name|
+  organisation = create(:organisation, name: organisation_name)
+  user = create(:user, email: user_email, organisation: organisation)
   login_with(user.email, user.password)
 end
 
-Given(/^I am logged in as "([^"]*)" of "([^"]*)"$/) do |user_email, organisation_code|
-  organisation = create(:organisation, code: organisation_code)
-  user = create(:user, email: user_email, organisation: organisation)
-  login_with(user.email, user.password)
+When(/^I sign out$/) do
+  click_on "Sign out"
 end

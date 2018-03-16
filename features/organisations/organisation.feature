@@ -6,19 +6,13 @@ Feature: Organisations
       | sara@familybingo.club | St John's Primary School | sarasara |
     Then I should see "Signed in as: sara@familybingo.club"
 
-  Scenario: Viewing an organisation invitation link
+  Scenario: Accessing an organisation's upload area
     Given the following organisation exists:
       | id | name                     |
       | 3  | St John's Primary School |
-    When I visit invitation link "/join_organisation/3"
-    Then I should see "Join the St John's Primary School bingo club"
-
-  Scenario: Joining an organisation via an invitation link
-    Given the following organisation exists:
-      | id | name                     |
-      | 3  | St John's Primary School |
-    When I visit invitation link "/join_organisation/3"
-    And I sign up with the following credentials:
-      | email                 | password |
-      | sara@familybingo.club | boo800   |
-    Then I should see "All about St John's Primary School bingo club"
+    And the organisation "St John's Primary School" has the following code:
+      | snake, apple, robot, camel, heart |
+    When I visit the "St John's Primary School" page
+    When I enter the following code:
+      | snake, apple, robot, camel, heart |
+    Then I see "Bingo with St John's Primary School"

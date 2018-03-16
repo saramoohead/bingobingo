@@ -3,7 +3,3 @@ Given(/^the following organisation exists:$/) do |table|
     create(:organisation, row)
   end
 end
-
-When(/^I visit invitation link "([^"]*)"$/) do |join_organisation_link|
-  visit join_organisation_link
-end
