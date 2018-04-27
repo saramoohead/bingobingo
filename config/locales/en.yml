@@ -4,6 +4,8 @@ en:
     label_for_form_code_entry: "Enter the code:"
     label_for_submit_button: Submit the code
 
+  app_name: Family Bingo Club
+
   errors:
       messages:
         carrierwave_processing_error: Cannot resize image.
@@ -12,10 +14,28 @@ en:
         extension_whitelist_error: "You are not allowed to upload %{extension} files, allowed types: %{allowed_types}"
         extension_blacklist_error: "You are not allowed to upload %{extension} files, prohibited types: %{prohibited_types}"
 
+  menu:
+    home: Home
+    pictures: Pictures
+    boards: Boards
+    games: Games
+
+  home:
+    call_to_action: Get started
+    value_proposition: Play bingo with your own pictures
+    step_one: Create an account for your organisation
+    step_one_detail: or access an organisation with the special code
+    step_two: Upload pictures
+    step_two_detail: Each group can store up to 75 custom images, or use ours
+    step_three: Make bingo boards
+    step_three_detail: Generate print-ready PDFs of unlimited boards
+    step_four: Play bingo
+    step_four_detail: Our app lets you play with numbers, your pictures or both at the same time - and check winners automatically
+
   organisation:
     organisation_welcome: "Welcome to %{detail}"
 
   sign_up:
-    create_organisation: Create your organisation
+    create_organisation: Create your organisation's account
     only_sign_up_to_create_organisation: Only sign up if you are the bingo game organiser.
-    uploading_picture_does_not_require_sign_up: To upload pictures, the bingo organiser sends out a special invitation code.
+    uploading_picture_does_not_require_sign_up: To upload pictures, the organiser sends out a special invitation code which you can input on the pictures page.

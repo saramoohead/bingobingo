@@ -1,30 +1,51 @@
 <div class="pusher">
-  <div class="ui vertical masthead inverted center aligned segment height-tall">
-    <div class="ui text container container--masthead">
-      <h1 class="ui inverted header">Family Bingo Club</h1>
-      <h2>Play Bingo</br> with your own pictures</h2>
-      <div class="ui huge secondary button">
-        <%= link_to("Get Started", "/sign_up") %>
-      </div>
+  <div class="ui vertical stripe segment masthead inverted center aligned height-tall">
+    <h1 class="ui inverted header"><%= t(:app_name) %></h1>
+    <h2><%= t(:value_proposition, scope: :home) %></h2>
+    <div class="ui huge secondary button">
+      <%= link_to(t(:call_to_action, scope: :home), "/sign_up") %>
     </div>
   </div>
 
   <div class="ui vertical stripe segment">
-    <div class="ui equal width stackable internally celled grid">
-      <div class="ui center aligned row">
-        <div class="column">
-          <h3><%=link_to "Upload your pictures", pictures_path %></h3>
-          <p>Each group can store up to 75 custom images, or use ours.</p>
-        </div>
-        <div class="column">
-          <h3>Make bingo boards</h3>
-          <p>Generate print-ready PDFs of unlimited boards.</p>
-        </div>
-        <div class="column">
-          <h3>Play bingo</h3>
-          <p>Play bingo with numbers, pictures or both at the same time.</br> Check winners automatically.</p>
-        </div>
-      </div>
+    <div class="ui text container">
+      <h3 class="ui header">
+        <%=t(:step_one, scope: :home)%>
+      </h3>
+      <p><%=t(:step_one_detail, scope: :home)%></p>
+    </div>
+
+    <div class="ui text container">
+      <div class="ui section divider"></div>
+    </div>
+
+    <div class="ui text container">
+      <h3 class="ui header">
+        <%=t(:step_two, scope: :home)%>
+      </h3>
+      <p><%=t(:step_two_detail, scope: :home)%></p>
+    </div>
+
+    <div class="ui text container">
+      <div class="ui section divider"></div>
+    </div>
+
+    <div class="ui text container">
+      <h3 class="ui header">
+        <%=t(:step_three, scope: :home)%>
+      </h3>
+      <p><%=t(:step_three_detail, scope: :home)%></p>
+    </div>
+
+    <div class="ui text container">
+      <div class="ui section divider"></div>
+    </div>
+
+    <div class="ui text container">
+      <h3 class="ui header">
+        <%=t(:step_four, scope: :home)%>
+      </h3>
+      <p><%=t(:step_four_detail, scope: :home)%></p>
     </div>
   </div>
 </div>
