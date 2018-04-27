@@ -1,6 +1,6 @@
 # stores uploaded pictures that are to be used in the bingo boards
 class Picture < ApplicationRecord
-  belongs_to :user
+  belongs_to :organisation
   mount_uploader :square_image, SquareImageUploader
 
   validates :name, presence: true

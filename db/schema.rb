@@ -10,10 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180302154047) do
+ActiveRecord::Schema.define(version: 20180316161930) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "access_codes", force: :cascade do |t|
+    t.integer  "picture_id"
+    t.integer  "organisation_id"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.index ["organisation_id"], name: "index_access_codes_on_organisation_id", using: :btree
+    t.index ["picture_id"], name: "index_access_codes_on_picture_id", using: :btree
+  end
 
   create_table "organisations", force: :cascade do |t|
     t.datetime "created_at",             null: false
@@ -25,11 +34,11 @@ ActiveRecord::Schema.define(version: 20180302154047) do
   create_table "pictures", force: :cascade do |t|
     t.text     "name"
     t.text     "short_description"
-    t.integer  "user_id"
     t.string   "square_image"
     t.datetime "created_at",        null: false
     t.datetime "updated_at",        null: false
-    t.index ["user_id"], name: "index_pictures_on_user_id", using: :btree
+    t.integer  "organisation_id"
+    t.index ["organisation_id"], name: "index_pictures_on_organisation_id", using: :btree
   end
 
   create_table "users", force: :cascade do |t|
@@ -46,6 +55,8 @@ ActiveRecord::Schema.define(version: 20180302154047) do
     t.index ["remember_token"], name: "index_users_on_remember_token", using: :btree
   end
 
-  add_foreign_key "pictures", "users"
+  add_foreign_key "access_codes", "organisations"
+  add_foreign_key "access_codes", "pictures"
+  add_foreign_key "pictures", "organisations"
   add_foreign_key "users", "organisations"
 end

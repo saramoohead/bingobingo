@@ -1,0 +1,7 @@
+<div class="six wide right floated column ui form">
+  <%= form_tag(access_organisation_path, method: :post) do %>
+    <%= label_tag :code, t(:label_for_form_code_entry, scope: :access_codes) %>
+    <%= text_field_tag :code %>
+    <%= submit_tag t(:label_for_submit_button, scope: :access_codes), class: "ui huge button" %>
+  <% end %>
+</div>

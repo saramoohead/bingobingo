@@ -8,11 +8,12 @@ Feature: Organisations
 
   Scenario: Accessing an organisation's upload area
     Given the following organisation exists:
-      | id | name                     |
-      | 3  | St John's Primary School |
-    And the organisation "St John's Primary School" has the following code:
-      | snake, apple, robot, camel, heart |
-    When I visit the "St John's Primary School" page
-    When I enter the following code:
-      | snake, apple, robot, camel, heart |
-    Then I see "Bingo with St John's Primary School"
+      | name                     |
+      | St John's Primary School |
+    And the organisation "St John's Primary School" has the following access codes:
+      | 5 | 4 | 3 | 2 | 1 |
+    When I visit the "St John's Primary School" organisation page
+    Then I do not see the "St John's Primary School" organisation page
+    And I enter the following access codes:
+      | 5 | 4 | 3 | 2 | 1 |
+    Then I see the "St John's Primary School" organisation page

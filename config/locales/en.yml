@@ -1,34 +1,21 @@
-# Files in the config/locales directory are used for internationalization
-# and are automatically loaded by Rails. If you want to use locales other
-# than English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t 'hello'
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t('hello') %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# To learn more, please read the Rails Internationalization guide
-# available at http://guides.rubyonrails.org/i18n.html.
-
 en:
+  access_codes:
+    access_organisation: To see your organisation, enter the access code
+    label_for_form_code_entry: "Enter the code:"
+    label_for_submit_button: Submit the code
+
+  errors:
+      messages:
+        carrierwave_processing_error: Cannot resize image.
+        carrierwave_integrity_error: Not an image.
+        carrierwave_download_error: Couldn't download image.
+        extension_whitelist_error: "You are not allowed to upload %{extension} files, allowed types: %{allowed_types}"
+        extension_blacklist_error: "You are not allowed to upload %{extension} files, prohibited types: %{prohibited_types}"
+
+  organisation:
+    organisation_welcome: "Welcome to %{detail}"
+
   sign_up:
     create_organisation: Create your organisation
     only_sign_up_to_create_organisation: Only sign up if you are the bingo game organiser.
     uploading_picture_does_not_require_sign_up: To upload pictures, the bingo organiser sends out a special invitation code.
-    
-  errors:
-      messages:
-        carrierwave_processing_error: "Cannot resize image."
-        carrierwave_integrity_error: "Not an image."
-        carrierwave_download_error: "Couldn't download image."
-        extension_whitelist_error: "You are not allowed to upload %{extension} files, allowed types: %{allowed_types}"
-        extension_blacklist_error: "You are not allowed to upload %{extension} files, prohibited types: %{prohibited_types}"
