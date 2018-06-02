@@ -1,8 +1,13 @@
 FactoryBot.define do
   factory :picture do
     organisation
-    name "EOC"
     short_description "Snake"
-    square_image "red_snake_EOC.jpg"
+
+    sequence :name do |n|
+      "INIT#{n}"
+    end
+    sequence :square_image do |n|
+      "red_snake_INIT#{n}.jpg"
+    end
   end
 end

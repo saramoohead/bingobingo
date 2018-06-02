@@ -4,6 +4,9 @@
       <div class="ui equal width stackable internally celled grid">
         <div class="column">
           <h2><%= t(:organisation_welcome, scope: :organisation, detail: @organisation.name) %></h2>
+          <% if signed_in? %>
+            <h2><%= t(:admin_welcome, scope: :organisation) %></h2>
+          <% end %>
         </div>
       </div>
     </div>

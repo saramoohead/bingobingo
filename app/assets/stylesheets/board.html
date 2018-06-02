@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+  .header {
+    grid-area: header;
+    background-color: purple;
+    padding: 10px;
+  }
+
+  .board {
+    display: grid;
+    grid-area: board;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    background-color: green;
+    grid-gap: 10px;
+    padding: 10px;
+  }
+
+  .board-wrapper {
+    display: grid;
+    grid-template-areas:
+      "header"
+      "board";
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+    background-color: #d2e8fc;
+    grid-gap: 10px;
+    padding: 10px;
+  }
+
+  .board-item {
+    background-color: white;
+    border-radius: 10px;
+  }
+
+  .image {
+    grid-area: image;
+    background-color: green;
+    grid-column-start: 1;
+    grid-row-start: 1;
+  }
+
+  .description {
+    grid-area: description;
+    background-color: pink;
+    grid-column-start: 1;
+    grid-row-start: 2;
+  }
+
+  .square-wrapper {
+    display: grid;
+    grid-template-areas:
+      "image"
+      "description";
+    grid-template-columns: auto;
+    grid-template-rows: auto 30px;
+  }
+
+
+  .b1 {
+    grid-column-start: 1;
+    grid-row-start: 1;
+  }
+  .b2 {
+    grid-column-start: 1;
+    grid-row-start: 2;
+  }
+  .b3 {
+    grid-column-start: 1;
+    grid-row-start: 3;
+  }
+  .b4 {
+    grid-column-start: 1;
+    grid-row-start: 4;
+  }
+  .b5 {
+    grid-column-start: 1;
+    grid-row-start: 5;
+  }
+  .i1 {
+    grid-column-start: 2;
+    grid-row-start: 1;
+  }
+  .i2 {
+    grid-column-start: 2;
+    grid-row-start: 2;
+  }
+  .i3 {
+    grid-column-start: 2;
+    grid-row-start: 3;
+  }
+  .i4 {
+    grid-column-start: 2;
+    grid-row-start: 4;
+  }
+  .i5 {
+    grid-column-start: 2;
+    grid-row-start: 5;
+  }
+
+
+</style>
+</head>
+
+<body>
+  <div class="board-wrapper">
+    <div class="header">B I N G O</div>
+    <div class="board">
+      <div class="board-item b1">
+        <div class="square-wrapper">
+          <img class="image" src="../../../public/uploads/picture/square_image/7/thumb_red_snake_EOC.jpg">
+          <div class="description">
+            B1
+          </div>
+        </div>
+      </div>
+      <div class="board-item b2">
+        <div class="square-wrapper">
+          <img class="image" src="../../../public/uploads/picture/square_image/7/thumb_red_snake_EOC.jpg">
+          <div class="description">
+            B2
+          </div>
+        </div>
+      </div>
+      <div class="board-item b3">
+        <div class="square-wrapper">
+          <img class="image" src="../../../public/uploads/picture/square_image/7/thumb_red_snake_EOC.jpg">
+          <div class="description">
+            B3
+          </div>
+        </div>
+      </div>
+      <div class="board-item b4">B4</div>
+      <div class="board-item b5">B5</div>
+      <div class="board-item i1">6</div>
+      <div class="board-item i2">7</div>
+      <div class="board-item i3">8</div>
+      <div class="board-item i4">9</div>
+      <div class="board-item i5">10</div>
+      <div class="board-item">11</div>
+      <div class="board-item">12</div>
+      <div class="board-item">13</div>
+      <div class="board-item">14</div>
+      <div class="board-item">15</div>
+      <div class="board-item">16</div>
+      <div class="board-item">17</div>
+      <div class="board-item">18</div>
+      <div class="board-item">19</div>
+      <div class="board-item">20</div>
+      <div class="board-item">21</div>
+      <div class="board-item">22</div>
+      <div class="board-item">23</div>
+      <div class="board-item">24</div>
+      <div class="board-item">25</div>
+    </div>
+  </div>
+</body>

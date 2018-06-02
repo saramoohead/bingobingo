@@ -19,6 +19,9 @@ en:
     pictures: Pictures
     boards: Boards
     games: Games
+    sign_in: Sign in
+    sign_out: Sign out
+    sign_up: Sign up
 
   home:
     call_to_action: Get started
@@ -34,6 +37,7 @@ en:
 
   organisation:
     organisation_welcome: "Welcome to %{detail}"
+    admin_welcome: "Admins are great"
 
   sign_up:
     create_organisation: Create your organisation's account

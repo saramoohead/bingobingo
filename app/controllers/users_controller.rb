@@ -4,6 +4,11 @@ class UsersController < Clearance::UsersController
     super
   end
 
+  def delete
+    session[:access_organisation] = nil
+    super
+  end
+
   private
 
   def user_from_params

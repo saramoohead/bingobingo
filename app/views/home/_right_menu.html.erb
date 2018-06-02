@@ -1,19 +1,20 @@
-<div class="right menu">
-  <div class="item">
-    <% if signed_in? %>
-      Signed in as: <%= current_user.email %>
+<div class="menu right">
+  <% if signed_in? %>
+    <div class="ui button">
+      <%= link_to t(:sign_out, scope: :menu), sign_out_path, method: :delete %>
+    </div>
+  <% elsif logged_in_with_access_code %>
+    <div class="ui button">
+      <%= link_to t(:sign_out, scope: :menu), destroy_access_organisation_path(id: session[:access_organisation]), method: :delete %>
+    </div>
+  <% else %>
+    <div class="ui buttons">
       <div class="ui button">
-        <%= link_to 'Sign out', sign_out_path, method: :delete %>
+        <%= link_to t(:sign_in, scope: :menu), sign_in_path %>
       </div>
-    <% else %>
-      <div class="ui buttons">
-        <div class="ui button">
-          <%= link_to 'Sign in', sign_in_path %>
-        </div>
-        <div class="ui button">
-          <%= link_to 'Sign up', sign_up_path %>
-        </div>
+      <div class="ui button">
+        <%= link_to t(:sign_up, scope: :menu), sign_up_path %>
       </div>
-    <% end %>
-  </div>
+    </div>
+  <% end %>
 </div>

@@ -5,4 +5,8 @@ class Organisation < ApplicationRecord
   has_many :access_codes
 
   enum status: { active: 0, archived: 1 }
+
+  def access_code_string
+    access_codes.sort.map(&:picture_id).join("")
+  end
 end

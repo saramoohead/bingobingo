@@ -1,8 +1,13 @@
-<div class="ui large inverted secondary menu">
+<div class="ui large inverted secondary menu" id="menu_home">
   <%= link_to t(:home, scope: :menu), root_path, class: "item" %>
-  <%= link_to t(:pictures, scope: :menu), pictures_path, class: "item" %>
-  <a class="item"><%= t(:boards, scope: :menu) %></a>
-  <a class="item"><%= t(:games, scope: :menu) %></a>
 
+  <% if logged_in_with_access_code || signed_in? %>
+    <%= link_to t(:pictures, scope: :menu), pictures_path, class: "item" %>
+  <% end %>
+
+  <% if signed_in? %>
+    <a class="item"><%= t(:boards, scope: :menu) %></a>
+    <a class="item"><%= t(:games, scope: :menu) %></a>
+  <% end %>
   <%= render partial: "/home/right_menu" %>
 </div>

@@ -7,10 +7,4 @@ class OrganisationsController < ApplicationController
       redirect_to new_access_organisation_path(params[:id])
     end
   end
-
-  private
-
-  def logged_in_with_access_code
-    session[:access_organisation]
-  end
 end

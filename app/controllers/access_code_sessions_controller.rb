@@ -1,7 +1,7 @@
 # control access to organisations via an access code session
 class AccessCodeSessionsController < ApplicationController
   def new
-    @organisation = Organisation.find(params_id)
+    session[:access_organisation] = nil
   end
 
   def create
@@ -13,6 +13,11 @@ class AccessCodeSessionsController < ApplicationController
     end
   end
 
+  def destroy
+    session.delete(:access_organisation)
+    redirect_to root_path
+  end
+
   private
 
   def params_id
@@ -20,6 +25,10 @@ class AccessCodeSessionsController < ApplicationController
   end
 
   def access_code
-    AccessCode.where(organisation_id: params[:id]).sort.map(&:picture_id).join("")
+    organisation.access_code_string
+  end
+
+  def organisation
+    @organisation ||= Organisation.find(params_id)
   end
 end

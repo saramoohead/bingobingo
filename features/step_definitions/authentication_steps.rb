@@ -1,7 +1,3 @@
-Given(/^I am on the sign up page$/) do
-  visit "/sign_up"
-end
-
 When(/^I sign up with the following credentials:$/) do |table|
   within(".new_user") do
     table.hashes.each do |row|
@@ -13,7 +9,7 @@ When(/^I sign up with the following credentials:$/) do |table|
   end
 end
 
-Given(/^the following user exists:$/) do |table|
+Given(/^the following admin user exists:$/) do |table|
   table.hashes.each do |row|
     organisation = create(:organisation, name: row["organisation"])
     create(:user,
@@ -25,14 +21,14 @@ end
 
 When(/^I sign in with the following credentials:$/) do |table|
   table.hashes.each do |row|
-    login_with(row["email"], row["password"])
+    login_as_admin(row["email"], row["password"])
   end
 end
 
-Given(/^I am logged in as "([^"]*)" of "([^"]*)":$/) do |user_email, organisation_name|
+Given(/^I am logged in as "([^"]*)" of "([^"]*)"$/) do |user_email, organisation_name|
   organisation = create(:organisation, name: organisation_name)
   user = create(:user, email: user_email, organisation: organisation)
-  login_with(user.email, user.password)
+  login_as_admin(user.email, user.password)
 end
 
 When(/^I sign out$/) do

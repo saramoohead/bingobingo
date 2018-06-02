@@ -1,0 +1,49 @@
+<div class="ui vertical stripe segment masthead inverted center aligned height-tall">
+  <h1 class="ui inverted header"><%= t(:app_name) %></h1>
+  <h2><%= t(:value_proposition, scope: :home) %></h2>
+  <div class="ui huge secondary button">
+    <%= link_to(t(:call_to_action, scope: :home), "/sign_up") %>
+  </div>
+</div>
+
+<div class="ui vertical stripe segment">
+  <div class="ui text container">
+    <h3 class="ui header">
+      <%=t(:step_one, scope: :home)%>
+    </h3>
+    <p><%=t(:step_one_detail, scope: :home)%></p>
+  </div>
+
+  <div class="ui text container">
+    <div class="ui section divider"></div>
+  </div>
+
+  <div class="ui text container">
+    <h3 class="ui header">
+      <%=t(:step_two, scope: :home)%>
+    </h3>
+    <p><%=t(:step_two_detail, scope: :home)%></p>
+  </div>
+
+  <div class="ui text container">
+    <div class="ui section divider"></div>
+  </div>
+
+  <div class="ui text container">
+    <h3 class="ui header">
+      <%=t(:step_three, scope: :home)%>
+    </h3>
+    <p><%=t(:step_three_detail, scope: :home)%></p>
+  </div>
+
+  <div class="ui text container">
+    <div class="ui section divider"></div>
+  </div>
+
+  <div class="ui text container">
+    <h3 class="ui header">
+      <%=t(:step_four, scope: :home)%>
+    </h3>
+    <p><%=t(:step_four_detail, scope: :home)%></p>
+  </div>
+</div>
